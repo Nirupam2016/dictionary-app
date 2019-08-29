@@ -1,0 +1,8 @@
+MANIFEST.in
+mydict/__init__.py
+mydict/mydict.py
+mydict.egg-info/PKG-INFO
+mydict.egg-info/SOURCES.txt
+mydict.egg-info/dependency_links.txt
+mydict.egg-info/requires.txt
+mydict.egg-info/top_level.txt

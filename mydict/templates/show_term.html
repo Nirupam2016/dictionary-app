@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block body %}
+<!--  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Text:
+        <dd><textarea name=text rows=5 cols=40></textarea>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+    {% endif %} -->
+
+
+      <!-- term table -->
+    <table>
+        <tr>
+            <th colspan = 4>Term</th>
+        </tr>
+        <tr>
+            <th>Romaji</th>
+            <th>Japanese</th>
+            <th>English</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>{{ term[0][0] }}</td>
+            <td>{{ term[0][1]|safe }}</td>
+            <td>{{ term[0][2]|safe }}</td>
+            <td>{{ term[0][3]|safe }}</td>
+        </tr>
+
+
+  <!-- phrases table -->
+  <table>
+      <tr>
+          <th colspan = 4>Related Phrases</th>
+      </tr>
+        <tr>
+            <th>Romaji</th>
+            <th>Japanese</th>
+            <th>English</th>
+            <th>Description</th>
+        </tr>
+  {% for phrase in phrases %}
+    <tr>
+        <td>{{ phrase[0] }}</td>
+        <td>{{ phrase[1]|safe }}</td>
+        <td>{{ phrase[2]|safe }}</td>
+        <td>{{ phrase[3]|safe }}</td>
+    </tr>
+  {% else %}
+  <tr><td colspan=2>Unbelievable.  No related phrases here so far</td></tr>
+  {% endfor %}
+  </table>
+
+
+  <!-- rules table -->
+    <table>
+      <tr>
+          <th colspan = 4>Related Rules</th>
+      </tr>
+        <tr>
+            <th>Romaji</th>
+            <th>Japanese</th>
+            <th>English</th>
+            <th>Description</th>
+        </tr>
+  {% for rule in rules %}
+    <tr>
+        <td>{{ rule[0] }}</td>
+        <td>{{ rule[1]|safe }}</td>
+        <td>{{ rule[2]|safe }}</td>
+        <td>{{ rule[3]|safe }}</td>
+    </tr>
+  {% else %}
+  <tr><td colspan=2>Unbelievable.  No related phrases here so far</td></tr>
+  {% endfor %}
+  </table>
+  {% endblock %}

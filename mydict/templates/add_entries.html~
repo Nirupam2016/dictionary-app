@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="{{ url_for('insert_term') }}" method=post class=add-entry>
+      <dl>
+        <dt>Term:</dt>
+        <dd><input type="text" size=30 name="term"></dd>
+        <dt>Symbolic Term:</dt>
+        <table class="rep_field">
+            <tr>
+                <td><input type="text" size=30 name="symb_term" ></td>
+            </tr>
+        </table>
+        <p class = "add_row">Add new row</p>
+        <dt>Definition:</dt>
+        <dd><input type="text" size=30 name="def"></dd>
+        <dt>Long Definition:</dt>
+        <dd><input type="text" size=300 name="long_def"></dd>
+        <dd><input type="submit" value=add></dd>
+      </dl>
+    </form>
+    <form action="{{ url_for('insert_lterm') }}" method=post class=add-entry>
+      <dl>
+        <dt>Long Term:</dt>
+        <dd><input type="text" size=30 name="lterm"></dd>
+        <dt>Symbolic Long Term:</dt>
+        <dd><input type="text" size=30 name="symb_lterm"></dd>
+        <dt>Definition:</dt>
+        <dd><input type="text" size=30 name="def"></dd>
+        <dt>Long Definition:</dt>
+        <dd><input type="text" size=300 name="long_def"></dd>
+        <dd><input type="submit" value=add></dd>
+      </dl>
+    </form>
+    <form action="{{ url_for('insert_rule') }}" method=post class=add-entry>
+      <dl>
+        <dt>Rule:</dt>
+        <dd><input type="text" size=30 name="rule"></dd>
+        <dt>Symbolic Rule:</dt>
+        <dd><input type="text" size=30 name="symb_rule"></dd>
+        <dt>Definition:</dt>
+        <dd><input type="text" size=30 name="def"></dd>
+        <dt>Long Definition:</dt>
+        <dd><input type="text" size=300 name="long_def"></dd>
+        <dd><input type="submit" value=add></dd>
+      </dl>
+    </form>
+     <form action="{{ url_for('insert_symb') }}" method=post class=add-entry>
+      <dl>
+        <dt>Symbol:</dt>
+        <dd><input type="text" size=30 name="symb"></dd>
+        <dt>Definition:</dt>
+        <dd><input type="text" size=30 name="def"></dd>
+        <dt>Long Definition:</dt>
+        <dd><input type="text" size=300 name="long_def"></dd>
+        <dd><input type="submit" value=add></dd>
+      </dl>
+    </form>
+    <script src = "{{url_for('static', filename = 'js/jquery-3.1.1.js')}}"></script>
+    <script src = "{{url_for('static', filename = 'js/form.js')}}"></script>
+{% endblock %}

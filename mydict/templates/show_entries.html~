@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+<!--  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Text:
+        <dd><textarea name=text rows=5 cols=40></textarea>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+    {% endif %} -->
+  <table >
+      <tr>
+          <th>Term</th>
+          <th>Symbolic Term</th>
+          <th>Definition</th>
+          <th>Long Definition</th>
+      </tr>
+  {% for entry in entries %}
+    <tr>
+        <td><a href = "/{{entry[0]}}">{{ entry[0] }}</td>
+        <td>{{ entry[1]|safe }}</td>
+        <td>{{ entry[2]|safe }}</td>
+        <td>{{ entry[3]|safe }}</td>
+    </tr>
+  {% else %}
+  <tr><td colspan=4>Unbelievable.  No entries here so far</td></tr>
+  {% endfor %}
+  </table>
+{% endblock %}

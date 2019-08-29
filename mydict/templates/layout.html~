@@ -1,0 +1,10 @@
+<!doctype html>
+<title>MyDict</title>
+<div >
+  <h1>MyDict</h1>
+
+  {% for message in get_flashed_messages() %}
+    <div >{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+</div>

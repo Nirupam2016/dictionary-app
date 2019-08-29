@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block body %}
+<!--  {% if session.logged_in %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <dl>
+        <dt>Title:
+        <dd><input type=text size=30 name=title>
+        <dt>Text:
+        <dd><textarea name=text rows=5 cols=40></textarea>
+        <dd><input type=submit value=Share>
+      </dl>
+    </form>
+    {% endif %} -->
+    <p>{{ word[0] }}</p>
+    <p>{{ word[1] }}</p>
+  <table>
+      <tr colspan = 2>
+          <th>Related Phrases</th>
+      </tr>
+      <tr>
+          <th>English</th>
+          <th>Japanese</th>
+      </tr>
+  {% for phrase in phrases %}
+    <tr>
+        <td>{{ phrase[0] }}</td>
+        <td>{{ phrase[1]|safe }}</td>
+    </tr>
+  {% else %}
+  <tr><td colspan=2>Unbelievable.  No related phrases here so far</td></tr>
+  {% endfor %}
+  </table>
+  {% endblock %}
